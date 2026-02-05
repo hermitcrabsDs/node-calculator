@@ -9,7 +9,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // home route
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "calculator.html"));
 });
+
 
 module.exports = app;
