@@ -55,6 +55,15 @@
         </div>
 
         <script>
+            const params = new URLSearchParams(window.location.search);
+            const amtSec = params.get('num1');
+            const amtPest = params.get('num2');
+
+            if(amtSec && amtPest) {
+                document.getElementById("num1").value = amtSec;
+                document.getElementById("num2").value = amtPest;
+            }
+
             document.getElementById("calc-form").addEventListener("submit", function (e) {
                 e.preventDefault();
 
